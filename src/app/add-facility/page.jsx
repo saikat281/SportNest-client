@@ -28,10 +28,10 @@ const AddFacilityPage = () => {
     return (
         <div>
             <h1 className="mx-auto text-4xl font-bold text-center mt-[40px]">Add Facility</h1>
-            <Card className="max-w-7xl mx-auto h-[70vh]  flex justify-center items-center ">
+            <Card className="max-w-7xl mx-auto h-[80vh]  flex justify-center items-center rounded-none">
                 
                 <Form onSubmit={onSubmit}
-                    className="p-10 space-y-8 shadow-lg"
+                    className="p-10 space-y-8 shadow-lg rounded-2xl bg-blue-50"
                 >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Facility Name */}
@@ -65,7 +65,7 @@ const AddFacilityPage = () => {
 
                         {/* Location */}
                         <div className="md:col-span-2">
-                            <TextField name="FacilityName" isRequired>
+                            <TextField name="location" isRequired>
                                 <Label>Location : </Label>
                                 <Input placeholder="Enter Location" className="rounded-2xl" />
                                 <FieldError />
@@ -74,7 +74,7 @@ const AddFacilityPage = () => {
 
                         {/* Price */}
                         <TextField name="price" type="number" isRequired>
-                            <Label>Price per hour (USD) : </Label>
+                            <Label>Price per hour (Tk) : </Label>
                             <Input
                                 type="number"
                                 placeholder="eg. 100"
