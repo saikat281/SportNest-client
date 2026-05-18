@@ -93,7 +93,7 @@ const AddFacilityPage = () => {
                             <FieldError />
                         </TextField>
 
-                        <TextField name="Available Time Slots" isRequired>
+                        <TextField name="Available_Time_Slots" isRequired>
                             <Label>Available Time Slots : </Label>
                             <Input placeholder="eg. 08:00 AM to 09:00 AM" className="rounded-2xl p-2" />
                             <FieldError />
