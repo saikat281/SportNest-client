@@ -14,11 +14,13 @@ const Navbar = () => {
 
             <div>
                 <ul className="flex items-center gap-3">
-                    <Link href={'/'}><li>Home</li></Link>
-                    <Link href={'/'}><li>All Facilities</li></Link>
-                    <Link href={'/'}><li>My Bookings</li></Link>
-                    <Link href={'/'}><li>Add Facility</li></Link>
-                    <Link href={'/'}><li>Manage My Facilities</li></Link>
+                    <Link href={'/'}><li className="hover:text-green-600">Home</li></Link>
+                    <Link href={'/'}><li className="hover:text-green-600">All Facilities</li></Link>
+                    <Link href={'/'}><li className="hover:text-green-600">My Bookings</li></Link>
+                    <Link href={'/'}><li className="hover:text-green-600">Add Facility</li></Link>
+                    <Link href={'/'}><li className="hover:text-green-600">Manage My Facilities</li></Link>
+                    <Link href={'/signup'}><li className="hover:text-green-600">SignUp</li></Link>
+                    <Link href={'/signin'}><li className="hover:text-green-600">SignIn</li></Link>
                 </ul>
             </div>
             <div className="flex-none">
