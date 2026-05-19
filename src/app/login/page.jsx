@@ -4,19 +4,19 @@ import { Button, Description, FieldError, Form, Input, Label, TextField, Card } 
 import { redirect } from "next/navigation";
 
 
-const SignUpPage = () => {
+const LogInPage = () => {
 
     const onSubmit = async(e)=>{
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const user = Object.fromEntries(formData.entries());
 
-       const {data,error} = await authClient.signUp.email({
+       const {data,error} = await authClient.signIn.email({
         email : user.email,
         password : user.password,
-        name : user.name,
-        image : user.image
        })
+
+       console.log({data,error})
 
        if(data)
        {
@@ -29,22 +29,11 @@ const SignUpPage = () => {
     }
     return (
         <div className="max-w-7xl mx-auto">
-            <h1 className="text-center text-4xl font-bold mt-[60px]">Create Account</h1>
+            <h1 className="text-center text-4xl font-bold mt-[60px]">Login</h1>
             <Card className="border rounded-xl shadow mt-[30px]">
                 <Form onSubmit={onSubmit} className="flex w-96 flex-col gap-4" >
 
-                    <TextField
-                        isRequired
-                        name="name"
-                        type="text"
-
-                    >
-                        <Label>Name</Label>
-                        <Input placeholder="Enter Your Name" />
-                        <FieldError />
-
-                    </TextField>
-
+                
                     <TextField
                         isRequired
                         name="email"
@@ -62,18 +51,7 @@ const SignUpPage = () => {
 
                     </TextField>
 
-                    <TextField
-                        isRequired
-                        name="image"
-                        type="url"
-
-                    >
-                        <Label>Image URL</Label>
-                        <Input placeholder="Image URL" />
-                        <FieldError />
-
-                    </TextField>
-
+                   
                     <TextField
                         isRequired
                         minLength={8}
@@ -100,7 +78,7 @@ const SignUpPage = () => {
                     <div className="flex justify-center  gap-2">
                         <Button type="submit" className={'w-full bg-green-500 hover:bg-green-700'}>
 
-                            Create Account
+                            Login
                         </Button>
 
                     </div>
@@ -110,4 +88,4 @@ const SignUpPage = () => {
     );
 };
 
-export default SignUpPage;
+export default LogInPage;

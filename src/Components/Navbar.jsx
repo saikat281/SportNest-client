@@ -1,7 +1,19 @@
+"use client"
+import { authClient } from "@/lib/auth-client";
+import { Avatar, Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 
 const Navbar = () => {
+
+    const {
+        data: session,
+    } = authClient.useSession()
+
+    const user = session?.user
+
+    console.log(user);
+
     return (
         <div className="navbar bg-base-100 shadow-sm space-x-3">
             <div className="flex-1">
@@ -19,39 +31,20 @@ const Navbar = () => {
                     <Link href={'/'}><li className="hover:text-green-600">My Bookings</li></Link>
                     <Link href={'/'}><li className="hover:text-green-600">Add Facility</li></Link>
                     <Link href={'/'}><li className="hover:text-green-600">Manage My Facilities</li></Link>
-                    <Link href={'/signup'}><li className="hover:text-green-600">SignUp</li></Link>
-                    <Link href={'/signin'}><li className="hover:text-green-600">SignIn</li></Link>
-                </ul>
-            </div>
-            <div className="flex-none">
 
-                <div className="dropdown dropdown-end">
-                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            {/* <Image
-                            src={"https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"}
-                            alt="nav-logo"
-                            height={200}
-                            width={200}
-                            /> */}
-                            <img
-                                alt="Tailwind CSS Navbar component"
-                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-                        </div>
-                    </div>
-                    <ul
-                        tabIndex="-1"
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li>
-                            <a className="justify-between">
-                                Profile
-                                <span className="badge">New</span>
-                            </a>
-                        </li>
-                        <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
-                    </ul>
-                </div>
+                    {user ? <>
+                        <Avatar>
+                            <Avatar.Image alt="John Doe" src={user?.image} referrerPolicy="no-referrer" />
+                            <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
+                        </Avatar>
+                        <Button variant="danger">LogOut</Button>
+                    </> :
+                        <>
+                            <Link href={'/signup'}><li className="hover:text-green-600">SignUp</li></Link>
+                            <Link href={'/login'}><li className="hover:text-green-600">login</li></Link>
+                        </>
+                    }
+                </ul>
             </div>
         </div>
     );
