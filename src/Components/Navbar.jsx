@@ -12,7 +12,10 @@ const Navbar = () => {
 
     const user = session?.user
 
-    console.log(user);
+     //console.log(user);
+     const handeleSignOut = async() =>{
+        await authClient.signOut();
+     }
 
     return (
         <div className="navbar bg-base-100 shadow-sm space-x-3">
@@ -37,7 +40,7 @@ const Navbar = () => {
                             <Avatar.Image alt="John Doe" src={user?.image} referrerPolicy="no-referrer" />
                             <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
                         </Avatar>
-                        <Button variant="danger">LogOut</Button>
+                        <Button onClick={handeleSignOut} variant="danger">LogOut</Button>
                     </> :
                         <>
                             <Link href={'/signup'}><li className="hover:text-green-600">SignUp</li></Link>
