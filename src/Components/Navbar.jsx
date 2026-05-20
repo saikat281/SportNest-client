@@ -21,7 +21,13 @@ const Navbar = () => {
         <div className="navbar bg-base-100 shadow-sm space-x-3">
             <div className="flex-1">
                 <div className="flex items-center">
-                    <img className="w-10 h-10" src="ball.jpg" alt="ball" />
+                    <Image
+                    src="/ball.jpg"
+                    alt="ball-logo"
+                    height={40}
+                    width={40}
+                    />
+                    {/* <Image className="w-10 h-10" src="ball.jpg" alt="ball" height/> */}
                     <a className="btn btn-ghost text-xl">SportNest</a>
                 </div>
 
@@ -30,7 +36,7 @@ const Navbar = () => {
             <div>
                 <ul className="flex items-center gap-3">
                     <Link href={'/'}><li className="hover:text-green-600">Home</li></Link>
-                    <Link href={'/'}><li className="hover:text-green-600">All Facilities</li></Link>
+                    <Link href={'/all-facilities'}><li className="hover:text-green-600">All Facilities</li></Link>
                     <Link href={'/'}><li className="hover:text-green-600">My Bookings</li></Link>
                     <Link href={'/'}><li className="hover:text-green-600">Add Facility</li></Link>
                     <Link href={'/'}><li className="hover:text-green-600">Manage My Facilities</li></Link>
