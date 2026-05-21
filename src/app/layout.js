@@ -1,6 +1,7 @@
 import { Barlow_Condensed } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Navbar";
+import { Toaster } from "react-hot-toast";
 
 const Barlow = Barlow_Condensed({
   subsets: ["latin"],
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
         <Navbar></Navbar>
         {children}
+        <Toaster />
         </body>
     </html>
   );

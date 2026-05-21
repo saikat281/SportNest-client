@@ -2,6 +2,7 @@
 import { authClient } from "@/lib/auth-client";
 import { Button, Card, DateField, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 
 const BookingCard = ({ data }) => {
@@ -23,7 +24,7 @@ const BookingCard = ({ data }) => {
         e.preventDefault();
 
         const bookingData = {
-            userId: user?.email,
+            userId: user?.id,
             facility_Name: e.target.facility_Name.value,
             booking_date: new Date(depatureDate),
             time_slot: e.target.time_slot.value,
@@ -42,6 +43,9 @@ const BookingCard = ({ data }) => {
 
         const BookedData = await res.json();
         console.log(BookedData);
+        
+        toast.success('Successfully Booked!')
+        // try-catch e rakha jabe
 
         
     }

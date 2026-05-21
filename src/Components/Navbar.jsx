@@ -18,7 +18,7 @@ const Navbar = () => {
      }
 
     return (
-        <div className="navbar bg-base-100 shadow-sm space-x-3">
+        <div className="max-w-7xl mx-auto navbar bg-base-100 shadow-sm space-x-3">
             <div className="flex-1">
                 <div className="flex items-center">
                     <Image
@@ -37,7 +37,7 @@ const Navbar = () => {
                 <ul className="flex items-center gap-3">
                     <Link href={'/'}><li className="hover:text-green-600">Home</li></Link>
                     <Link href={'/all-facilities'}><li className="hover:text-green-600">All Facilities</li></Link>
-                    <Link href={'/'}><li className="hover:text-green-600">My Bookings</li></Link>
+                    <Link href={'/my-bookings'}><li className="hover:text-green-600">My Bookings</li></Link>
                     <Link href={'/'}><li className="hover:text-green-600">Add Facility</li></Link>
                     <Link href={'/'}><li className="hover:text-green-600">Manage My Facilities</li></Link>
 
