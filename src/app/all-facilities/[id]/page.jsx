@@ -12,8 +12,8 @@ const FacilityDetailsPage = async ({ params }) => {
     // console.log(data);
     const { FacilityName, FacilityType, imageUrl, location, price, Capacity, Available_Time_Slots, description } = data
     return (
-        <div className="h-[80vh] w-full max-w-7xl mx-auto  flex items-center mt-[60px]">
-            <Card className="flex flex-row justify-around  bg-linear-to-r from-green-50 to-green-100">
+        <div className=" w-full max-w-7xl mx-auto  flex items-center justify-center mt-[20px] ">
+            <Card className="flex flex-row justify-around  bg-linear-to-r from-green-50 to-green-100 shadow">
                 <div className="space-y-3">
                     <Image
                         src={imageUrl}
@@ -32,7 +32,7 @@ const FacilityDetailsPage = async ({ params }) => {
                     <p className="text-2xl"> <span className="font-semibold">Available Time Slots: </span>{Available_Time_Slots}</p>
                     <p className="text-2xl">  <span className="font-semibold">Description: </span>{description}</p>
                 </div>
-                <div className=" h-[70vh]">
+                <div>
                     <BookingCard data={data}></BookingCard>
                     {/* <Button>Book Now</Button> */}
 

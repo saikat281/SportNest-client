@@ -1,27 +1,37 @@
 "use client"
 
+import { authClient } from "@/lib/auth-client";
 import { FieldError, Input, Label, ListBox, TextField, Select, TextArea, Button, Card, Form } from "@heroui/react";
+import { redirect } from "next/navigation";
 
 
 const AddFacilityPage = () => {
 
-    const onSubmit = async(e)=>{
+    const {
+        data: session,
+    } = authClient.useSession()
+
+    const user = session?.user
+    
+
+    const onSubmit = async (e) => {
         e.preventDefault();
         const formdata = new FormData(e.currentTarget);
         const facility = Object.fromEntries(formdata.entries());
+        facility.id = user?.id
+         console.log(facility);
 
-        console.log(facility);
-
-        const res = await fetch('http://localhost:5000/facility',{
-            method : 'POST',
+        const res = await fetch('http://localhost:5000/facility', {
+            method: 'POST',
             headers: {
-                'content-type' : 'application/json'
+                'content-type': 'application/json'
             },
             body: JSON.stringify(facility)
         })
 
         const data = res.json();
         console.log(data)
+        redirect('/all-facilities');
     }
 
 
@@ -29,7 +39,7 @@ const AddFacilityPage = () => {
         <div>
             <h1 className="mx-auto text-4xl font-bold text-center mt-[40px]">Add Facility</h1>
             <Card className="max-w-7xl mx-auto h-[80vh]  flex justify-center items-center rounded-none">
-                
+
                 <Form onSubmit={onSubmit}
                     className="p-10 space-y-8 shadow-lg rounded-2xl bg-blue-50"
                 >
