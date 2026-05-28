@@ -21,10 +21,15 @@ const AddFacilityPage = () => {
         facility.id = user?.id
          console.log(facility);
 
+         const {data:tokenData} = await authClient.token()
+         console.log(tokenData)
+
         const res = await fetch('http://localhost:5000/facility', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                 authorization : `Bearer ${tokenData?.token}`
+                
             },
             body: JSON.stringify(facility)
         })
@@ -38,7 +43,7 @@ const AddFacilityPage = () => {
     return (
         <div>
             <h1 className="mx-auto text-4xl font-bold text-center mt-[40px]">Add Facility</h1>
-            <Card className="max-w-7xl mx-auto h-[80vh]  flex justify-center items-center rounded-none">
+            <Card className="max-w-7xl mx-auto   flex justify-center items-center rounded-none">
 
                 <Form onSubmit={onSubmit}
                     className="p-10 space-y-8 shadow-lg rounded-2xl bg-blue-50"

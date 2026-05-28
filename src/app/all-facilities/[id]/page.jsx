@@ -1,13 +1,23 @@
 
 import BookingCard from "@/Components/BookingCard";
+import { auth } from "@/lib/auth";
 import { Button, Card } from "@heroui/react";
+import { headers } from "next/headers";
 import Image from "next/image";
 
 const FacilityDetailsPage = async ({ params }) => {
 
     const { id } = await params;
+    const {token} = await auth.api.getToken ({
+        headers : await headers()
+    })
+    console.log(token)
 
-    const res = await fetch(`http://localhost:5000/facility/${id}`)
+    const res = await fetch(`http://localhost:5000/facility/${id}`,{
+        headers : {
+            authorization : `Bearer ${token}`
+        }
+    })
     const data = await res.json();
     // console.log(data);
     const { FacilityName, FacilityType, imageUrl, location, price, Capacity, Available_Time_Slots, description } = data

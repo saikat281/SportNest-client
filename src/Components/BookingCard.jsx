@@ -20,8 +20,12 @@ const BookingCard = ({ data }) => {
     const user = session?.user
     //  console.log(user);
 
+    
+
     const handleBooking = async(e) => {
         e.preventDefault();
+
+        
 
         const bookingData = {
             userId: user?.id,
@@ -32,11 +36,14 @@ const BookingCard = ({ data }) => {
             price: Price
 
         }
+        const {data:tokenData} = await authClient.token()
+        console.log(tokenData)
 
         const res = await fetch('http://localhost:5000/booking',{
             method : 'POST',
             headers:{
-                'content-type' : 'application/json'
+                'content-type' : 'application/json',
+                authorization : `Bearer ${tokenData?.token}`
             },
             body : JSON.stringify(bookingData)
         })
