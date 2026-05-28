@@ -1,4 +1,5 @@
 
+import { DeleteFacilityModal } from "@/Components/DeleteFacilityModal";
 import { EditFacilityModal } from "@/Components/EditFacilityModal";
 import { auth } from "@/lib/auth";
 import { Button, Card } from "@heroui/react";
@@ -22,7 +23,7 @@ const ManageMyFacilitiesPage = async () => {
     // const { imageUrl, FacilityName, price, _id } = data
     return (
         <div className="mt-[60px]">
-            <h1 className="text-center text-4xl font-bold">Manage My Facilities</h1>
+            <h1 className="text-center text-4xl font-bold">My Facilities</h1>
             <div className="max-w-7xl mx-auto grid grid-cols-3 gap-10 mt-[60px]">
                 {
                     data.map((d, idx) => {
@@ -50,9 +51,7 @@ const ManageMyFacilitiesPage = async () => {
                                 </div>
                                 <div className="space-x-2">
                                     <EditFacilityModal d={d}></EditFacilityModal>
-                                    <Button isIconOnly variant="danger">
-                                        <IoTrashBin />
-                                    </Button>
+                                    <DeleteFacilityModal facility_Name={d.FacilityName} id={d._id}></DeleteFacilityModal>
                                 </div>
                             </div>
 
