@@ -39,7 +39,7 @@ const Navbar = () => {
                     <Link href={'/all-facilities'}><li className="hover:text-green-600">All Facilities</li></Link>
                     <Link href={'/my-bookings'}><li className="hover:text-green-600">My Bookings</li></Link>
                     <Link href={'/add-facility'}><li className="hover:text-green-600">Add Facility</li></Link>
-                    <Link href={'/'}><li className="hover:text-green-600">Manage My Facilities</li></Link>
+                    <Link href={'/manage-my-facilities'}><li className="hover:text-green-600">Manage My Facilities</li></Link>
 
                     {user ? <>
                         <Avatar>

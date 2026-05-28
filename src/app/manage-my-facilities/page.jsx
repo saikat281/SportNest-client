@@ -1,4 +1,5 @@
 
+import { EditFacilityModal } from "@/Components/EditFacilityModal";
 import { auth } from "@/lib/auth";
 import { Button, Card } from "@heroui/react";
 import { headers } from "next/headers";
@@ -21,41 +22,40 @@ const ManageMyFacilitiesPage = async () => {
     // const { imageUrl, FacilityName, price, _id } = data
     return (
         <div className="mt-[60px]">
-            <h1 className="text-center text-4xl font-bold">All Facilities</h1>
-            <div className="max-w-7xl mx-auto grid grid-cols-3 gap-10">
+            <h1 className="text-center text-4xl font-bold">Manage My Facilities</h1>
+            <div className="max-w-7xl mx-auto grid grid-cols-3 gap-10 mt-[60px]">
                 {
                     data.map((d, idx) => {
-                        return <Card key={idx} className=" flex flex-row justify-between items-center bg-green-100  p-6 shadow">
-                            <div className="flex items-center gap-3 space-y-2">
+                        return <Card key={idx} className=" bg-green-50  p-6 shadow">
+                            <div>
 
-                                <div>
+                                <div className="relative w-auto h-[300px]">
                                     <Image
                                         src={d.imageUrl}
                                         alt={d.FacilityName}
                                         fill
-                                        className="object-cover "
+                                        className="object-cover"
                                     />
                                 </div>
 
+                            </div>
+                            <div className="flex justify-between items-center gap-3 space-y-2">
                                 <div>
-                                    <h1 className="text-3xl font-bold">{d.facility_Name}</h1>
+                                    <h1 className="text-3xl font-bold">{d.FacilityName}</h1>
                                     <p className="font-bold">Facility Type: {d.FacilityType}</p>
                                     <p className="font-bold">Location: {d.location}</p>
                                     <p className="text-2xl font-bold">Price: ৳{d.price}</p>
+                                    
 
                                 </div>
-
-
+                                <div className="space-x-2">
+                                    <EditFacilityModal d={d}></EditFacilityModal>
+                                    <Button isIconOnly variant="danger">
+                                        <IoTrashBin />
+                                    </Button>
+                                </div>
                             </div>
 
-                            <div>
-                                <Button isIconOnly variant="secondary">
-                                    <FaEdit />
-                                </Button>
-                                <Button isIconOnly variant="danger">
-                                    <IoTrashBin />
-                                </Button>
-                            </div>
                         </Card>
                     })
                 }

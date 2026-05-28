@@ -8,7 +8,7 @@ const FacilityCard = ({ data }) => {
     const { imageUrl, FacilityName, price, _id } = data
     return (
         <Card className="flex flex-col justify-between">
-            <div className="relative w-[400px] h-[400px] ">
+            <div className="relative w-auto h-[250px] ">
                 <Image
                     src={imageUrl}
                     alt={FacilityName}
