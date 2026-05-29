@@ -10,7 +10,7 @@ const AllFacilitiesPage = async ({ searchParams }) => {
     const search = params?.search || "";
     const sportType = params?.sportType || "";
 
-    console.log("SEARCH PARAMS:", params);
+    // console.log("SEARCH PARAMS:", params);
 
     const res = await fetch(`http://localhost:5000/facility?search=${search}&sportType=${sportType}`,
         { cache: "no-store" });

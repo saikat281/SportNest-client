@@ -9,7 +9,7 @@ const FacilityCard = ({ data }) => {
     const { imageUrl, FacilityName, price, _id } = data
     return (
         <Card className="flex flex-col justify-between">
-            <div className="relative w-auto h-[250px] ">
+            <div className="relative w-[300px] h-[250px] ">
                 <Image
                     src={imageUrl}
                     alt={FacilityName}
@@ -17,28 +17,27 @@ const FacilityCard = ({ data }) => {
                     className="object-cover "
                 />
             </div>
-            <div className="flex justify-between items-center">
-                <div className="space-y-3">
+            <div className=" flex justify-between items-center">
+                <div className="space-y-3 w-full">
                     <div>
                         <h1 className="text-2xl font-bold">{FacilityName}</h1>
                     </div>
 
-                    <div>
-                        <h2 className="font-semibold">৳ {price} /per hour</h2>
-                    </div>
-                    <div>
-                        <Button className={'bg-green-600'}>
-                            <FaExternalLinkAlt />
-                            <span>Book Now</span>
-                        </Button>
+                    <div className="flex justify-between items-center">
+                        <div>
+                            <h2 className="font-semibold">৳ {price} /per hour</h2>
+                        </div>
 
+
+                        <div>
+                            <Link href={`/all-facilities/${_id}`}>
+                                <Button className={'bg-black rounded-lg'}> View Details</Button>
+                            </Link>
+                        </div>
                     </div>
+
                 </div>
-                <div>
-                    <Link href={`/all-facilities/${_id}`}>
-                        <Button className={'bg-black rounded-lg'}> View Details</Button>
-                    </Link>
-                </div>
+
             </div>
 
 

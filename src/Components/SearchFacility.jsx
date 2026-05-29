@@ -3,6 +3,7 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { Label, SearchField, Button, Dropdown } from "@heroui/react";
+import { FaFilter } from "react-icons/fa";
 
 export default function SearchFacility() {
     const router = useRouter();
@@ -30,35 +31,9 @@ export default function SearchFacility() {
     return (
         <div className="flex gap-4 items-center">
 
-
-            <SearchField name="search">
-                <SearchField.Group>
-                    <SearchField.SearchIcon />
-
-                    <SearchField.Input
-                        className="w-[280px]"
-                        placeholder="Search Facility..."
-                        value={search}
-                        onChange={(e) => {
-                            const value = e.target.value;
-                            setSearch(value);
-                            updateURL(value, sportType);
-                        }}
-                    />
-
-                    <SearchField.ClearButton
-                        onClick={() => {
-                            setSearch("");
-                            updateURL("", sportType);
-                        }}
-                    />
-                </SearchField.Group>
-            </SearchField>
-
-
             <Dropdown>
-                <Button aria-label="Menu" variant="secondary">
-                    {sportType || "Select Sport"}
+                <Button aria-label="Menu" className={'bg-green-600'}>
+                    <FaFilter /> {sportType || "Select Sport"}
                 </Button>
 
                 <Dropdown.Popover>
@@ -95,6 +70,34 @@ export default function SearchFacility() {
                     </Dropdown.Menu>
                 </Dropdown.Popover>
             </Dropdown>
+
+
+            <SearchField name="search">
+                <SearchField.Group>
+                    <SearchField.SearchIcon />
+
+                    <SearchField.Input
+                        className="w-[280px]"
+                        placeholder="Search Facility..."
+                        value={search}
+                        onChange={(e) => {
+                            const value = e.target.value;
+                            setSearch(value);
+                            updateURL(value, sportType);
+                        }}
+                    />
+
+                    <SearchField.ClearButton
+                        onClick={() => {
+                            setSearch("");
+                            updateURL("", sportType);
+                        }}
+                    />
+                </SearchField.Group>
+            </SearchField>
+
+
+
 
         </div>
     );
