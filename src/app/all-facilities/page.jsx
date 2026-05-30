@@ -1,9 +1,8 @@
 import FacilityCard from "@/Components/FacilityCard";
 import SearchFacility from "@/Components/SearchFacility";
 
-
-
 const AllFacilitiesPage = async ({ searchParams }) => {
+
 
     const params = await searchParams
 
@@ -21,7 +20,7 @@ const AllFacilitiesPage = async ({ searchParams }) => {
 
     return (
 
-        <div className="mt-[60px]">
+        <div className="mt-[60px] ">
             <div className=" max-w-7xl mx-auto ">
                 <div className="flex justify-between items-center ">
                     <h1 className=" text-4xl font-bold">All Facilities</h1>

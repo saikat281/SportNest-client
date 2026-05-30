@@ -17,7 +17,7 @@ export default async function Home() {
       <Banner></Banner>
 
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-center text-4xl font-extrabold mt-[30px]">Featured Facilities</h1>
+        <h1 className="font-hind text-center text-4xl font-extrabold mt-[30px]">Featured Facilities</h1>
 
         <div className=" grid grid-cols-3 gap-10 mt-[30px]">
           {
@@ -25,7 +25,7 @@ export default async function Home() {
           }
         </div>
 
-        <h1 className="text-center text-4xl font-extrabold mt-[60px]">Facilities you will get</h1>
+        <h1 className="font-hind text-center text-4xl font-extrabold mt-[60px]">Facilities you will get</h1>
 
         <FacilityType></FacilityType>
 
@@ -40,7 +40,7 @@ export default async function Home() {
 
           </div>
           <div className="space-y-8">
-            <p className=" text-5xl font-extrabold">Whether it is football, cricket, badminton, or any other sport, book top-quality turf grounds with ease and focus on what matters most—playing your best game.</p>
+            <p className="font-hind text-5xl font-extrabold">Whether it is football, cricket, badminton, or any other sport, book top-quality turf grounds with ease and focus on what matters most—playing your best game.</p>
             <div className="mt-[60px]"> <UiVerseButton title={"Book Now"} href={"/all-facilities"}></UiVerseButton></div>
 
           </div>

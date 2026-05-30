@@ -6,7 +6,7 @@ const MyBookingsCard = ({ data }) => {
     const { facility_Name, booking_date, time_slot, price } = data
     return (
         <div >
-            <Card className=" flex flex-row justify-between items-center bg-green-100  p-6 shadow">
+            <Card className=" flex flex-row justify-between items-center bg-gray-300  p-6 shadow">
                 <div className="space-y-2">
                     <h1 className="text-3xl font-bold">{facility_Name}</h1>
                     <p className="font-bold">Booking Date: {booking_date}</p>

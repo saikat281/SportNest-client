@@ -21,10 +21,11 @@ export default function RootLayout({ children }) {
       lang="en" data-theme="light"
       className={`${Barlow.className}  h-full antialiased`}
     >
-      <head><link href="https://api.fontshare.com/v2/css?f[]=hind@400&f[]=khand@700&display=swap" rel="stylesheet"></link></head>
+      <head>
+        <link href="https://api.fontshare.com/v2/css?f[]=hind@400&f[]=khand@700&display=swap" rel="stylesheet"></link></head>
 
 
-      <body className="min-h-full flex flex-col">
+      <body className="font-hind min-h-full flex flex-col">
         <Navbar></Navbar>
         {children}
         <Footer></Footer>

@@ -7,6 +7,7 @@ import UiVerseNavLink from "./UiVerseNavLink";
 import UiVerseLogOut from "./UiVerseLogOut";
 import UiVerseLogIn from "./UiVerseLogIn";
 
+
 const Navbar = () => {
 
     const {
@@ -14,36 +15,39 @@ const Navbar = () => {
     } = authClient.useSession()
 
     const user = session?.user
-
-     //console.log(user);
-     const handeleSignOut = async() =>{
-        await authClient.signOut();
-     }
+    console.log("session:", session)
 
     return (
         <div className="max-w-7xl mx-auto navbar bg-base-100 shadow-sm space-x-3">
             <div className="flex-1">
                 <div className="flex items-center">
                     <Image
-                    src="/ball.jpg"
-                    alt="ball-logo"
-                    height={40}
-                    width={40}
+                        src="/ball.jpg"
+                        alt="ball-logo"
+                        height={40}
+                        width={40}
                     />
                     {/* <Image className="w-10 h-10" src="ball.jpg" alt="ball" height/> */}
-                    <a className="btn btn-ghost text-xl">SportNest</a>
+                    <a className="font-hind btn btn-ghost text-xl">SportNest</a>
                 </div>
 
             </div>
 
             <div>
                 <ul className="flex items-center gap-3">
-                    
-                    <UiVerseNavLink title={"Home"} href={"/"}></UiVerseNavLink>
-                    <UiVerseNavLink title={"All Facilities"} href={"/all-facilities"}></UiVerseNavLink>
-                    <UiVerseNavLink title={"My Bookings"} href={"/my-bookings"}></UiVerseNavLink>
-                    <UiVerseNavLink title={"Add Facility"} href={"/add-facility"}></UiVerseNavLink>
-                    <UiVerseNavLink title={"Manage My Facilities"} href={"/manage-my-facilities"}></UiVerseNavLink>
+
+                    <div className="flex items-center gap-2 hidden lg:flex">
+                        <UiVerseNavLink title={"Home"} href={"/"}></UiVerseNavLink>
+                        <UiVerseNavLink title={"All Facilities"} href={"/all-facilities"}></UiVerseNavLink>
+                        <UiVerseNavLink title={"My Bookings"} href={"/my-bookings"}></UiVerseNavLink>
+                        <UiVerseNavLink title={"Add Facility"} href={"/add-facility"}></UiVerseNavLink>
+                        <UiVerseNavLink title={"Manage My Facilities"} href={"/manage-my-facilities"}></UiVerseNavLink>
+
+                    </div>
+
+                    {/* <div className="lg:hidden">
+                        <DropdownNav></DropdownNav>
+                    </div> */}
 
                     {user ? <>
                         <Avatar>
@@ -53,11 +57,13 @@ const Navbar = () => {
                         <UiVerseLogOut></UiVerseLogOut>
                     </> :
                         <>
-                            
+
                             <UiVerseLogIn href={'/signup'} title={"SignUp"}></UiVerseLogIn>
                             <UiVerseLogIn href={'/login'} title={"login"}></UiVerseLogIn>
                         </>
                     }
+
+
                 </ul>
             </div>
         </div>

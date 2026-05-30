@@ -1,11 +1,13 @@
+
 import { authClient } from '@/lib/auth-client';
-import React from 'react';
+import { redirect } from 'next/navigation';
 import styled from 'styled-components';
 
 const UiVerseLogOut = () => {
 
     const handeleSignOut = async () => {
         await authClient.signOut();
+         redirect('/');
     }
     return (
         <StyledWrapper>

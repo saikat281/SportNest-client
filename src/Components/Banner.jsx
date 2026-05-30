@@ -16,10 +16,10 @@ const Banner = () => {
 
             <div className="hero-overlay absolute inset-0 bg-black/50 flex items-center">
                 <div className="w-full max-w-[1440px] mx-auto space-y-4">
-                    <h1 className="font-banner text-white text-8xl font-extrabold stroke-black">
+                    <h1 className="font-hind text-white text-8xl font-extrabold stroke-black">
                         Play More. Manage Less.
                     </h1>
-                    <p className="font-banner text-white text-3xl">
+                    <p className="font-hind text-white text-3xl">
                         Smart sports facility booking for players, teams, and venue managers.
                     </p>
                     <div className="mt-[60px]"> <UiVerseButton title={"Explore Facilities"} href={"/all-facilities"}></UiVerseButton></div>

@@ -31,7 +31,7 @@ const FacilityCard = ({ data }) => {
 
                         <div>
                             <Link href={`/all-facilities/${_id}`}>
-                                <Button className={'bg-black rounded-lg'}> View Details</Button>
+                                <button className='bg-black rounded-lg text-white p-2 cursor-pointer hover:bg-gray-800'> View Details</button>
                             </Link>
                         </div>
                     </div>

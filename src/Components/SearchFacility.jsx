@@ -32,7 +32,7 @@ export default function SearchFacility() {
         <div className="flex gap-4 items-center">
 
             <Dropdown>
-                <Button aria-label="Menu" className={'bg-green-600'}>
+                <Button aria-label="Menu" className={'bg-green-600 hover:bg-green-800'}>
                     <FaFilter /> {sportType || "Select Sport"}
                 </Button>
 
