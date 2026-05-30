@@ -2,6 +2,7 @@ import { Barlow_Condensed } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Navbar";
 import { Toaster } from "react-hot-toast";
+import Footer from "@/Components/Footer";
 
 const Barlow = Barlow_Condensed({
   subsets: ["latin"],
@@ -20,11 +21,15 @@ export default function RootLayout({ children }) {
       lang="en" data-theme="light"
       className={`${Barlow.className}  h-full antialiased`}
     >
+      <head><link href="https://api.fontshare.com/v2/css?f[]=hind@400&f[]=khand@700&display=swap" rel="stylesheet"></link></head>
+
+
       <body className="min-h-full flex flex-col">
         <Navbar></Navbar>
         {children}
+        <Footer></Footer>
         <Toaster />
-        </body>
+      </body>
     </html>
   );
 }

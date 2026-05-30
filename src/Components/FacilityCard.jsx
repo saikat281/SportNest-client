@@ -8,8 +8,8 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 const FacilityCard = ({ data }) => {
     const { imageUrl, FacilityName, price, _id } = data
     return (
-        <Card className="flex flex-col justify-between">
-            <div className="relative w-[300px] h-[250px] ">
+        <Card className="flex flex-col justify-between ">
+            <div className="relative w-full h-[250px] ">
                 <Image
                     src={imageUrl}
                     alt={FacilityName}
@@ -18,7 +18,7 @@ const FacilityCard = ({ data }) => {
                 />
             </div>
             <div className=" flex justify-between items-center">
-                <div className="space-y-3 w-full">
+                <div className="space-y-3 w-full ">
                     <div>
                         <h1 className="text-2xl font-bold">{FacilityName}</h1>
                     </div>

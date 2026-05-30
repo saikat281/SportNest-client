@@ -1,4 +1,8 @@
 @import "tailwindcss";
 @plugin "daisyui";
-@import "@heroui/styles"; 
+@import "@heroui/styles";
 
+.font-banner {
+    font-family: 'Hind', sans-serif;
+    font-family: 'Khand', sans-serif;
+}

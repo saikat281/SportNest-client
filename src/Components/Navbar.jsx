@@ -3,6 +3,9 @@ import { authClient } from "@/lib/auth-client";
 import { Avatar, Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
+import UiVerseNavLink from "./UiVerseNavLink";
+import UiVerseLogOut from "./UiVerseLogOut";
+import UiVerseLogIn from "./UiVerseLogIn";
 
 const Navbar = () => {
 
@@ -35,22 +38,24 @@ const Navbar = () => {
 
             <div>
                 <ul className="flex items-center gap-3">
-                    <Link href={'/'}><li className="hover:text-green-600">Home</li></Link>
-                    <Link href={'/all-facilities'}><li className="hover:text-green-600">All Facilities</li></Link>
-                    <Link href={'/my-bookings'}><li className="hover:text-green-600">My Bookings</li></Link>
-                    <Link href={'/add-facility'}><li className="hover:text-green-600">Add Facility</li></Link>
-                    <Link href={'/manage-my-facilities'}><li className="hover:text-green-600">Manage My Facilities</li></Link>
+                    
+                    <UiVerseNavLink title={"Home"} href={"/"}></UiVerseNavLink>
+                    <UiVerseNavLink title={"All Facilities"} href={"/all-facilities"}></UiVerseNavLink>
+                    <UiVerseNavLink title={"My Bookings"} href={"/my-bookings"}></UiVerseNavLink>
+                    <UiVerseNavLink title={"Add Facility"} href={"/add-facility"}></UiVerseNavLink>
+                    <UiVerseNavLink title={"Manage My Facilities"} href={"/manage-my-facilities"}></UiVerseNavLink>
 
                     {user ? <>
                         <Avatar>
                             <Avatar.Image alt="John Doe" src={user?.image} referrerPolicy="no-referrer" />
                             <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
                         </Avatar>
-                        <Button onClick={handeleSignOut} variant="danger">LogOut</Button>
+                        <UiVerseLogOut></UiVerseLogOut>
                     </> :
                         <>
-                            <Link href={'/signup'}><li className="hover:text-green-600">SignUp</li></Link>
-                            <Link href={'/login'}><li className="hover:text-green-600">login</li></Link>
+                            
+                            <UiVerseLogIn href={'/signup'} title={"SignUp"}></UiVerseLogIn>
+                            <UiVerseLogIn href={'/login'} title={"login"}></UiVerseLogIn>
                         </>
                     }
                 </ul>
