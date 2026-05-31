@@ -7,6 +7,7 @@ import UiVerseNavLink from "./UiVerseNavLink";
 import UiVerseLogOut from "./UiVerseLogOut";
 import UiVerseLogIn from "./UiVerseLogIn";
 import { DropDownNav } from "./DropDownNav";
+import { AvatarDropDown } from "./AvatarDropDown";
 
 
 const Navbar = () => {
@@ -51,10 +52,11 @@ const Navbar = () => {
                     </div>
 
                     {user ? <>
-                        <Avatar>
+                    <AvatarDropDown user={user}></AvatarDropDown>
+                        {/* <Avatar>
                             <Avatar.Image alt="John Doe" src={user?.image} referrerPolicy="no-referrer" />
                             <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
-                        </Avatar>
+                        </Avatar> */}
                         <UiVerseLogOut></UiVerseLogOut>
                     </> :
                         <>

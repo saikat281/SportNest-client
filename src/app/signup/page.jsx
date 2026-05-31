@@ -19,7 +19,7 @@ const SignUpPage = () => {
         })
 
         if (data) {
-            redirect('/');
+            redirect('/login');
         }
         else {
             // toast
