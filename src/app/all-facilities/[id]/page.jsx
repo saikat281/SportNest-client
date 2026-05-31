@@ -23,14 +23,14 @@ const FacilityDetailsPage = async ({ params }) => {
     const { FacilityName, FacilityType, imageUrl, location, price, Capacity, Available_Time_Slots, description } = data
     return (
         <div className=" w-full max-w-7xl mx-auto  flex items-center justify-center mt-[20px] ">
-            <Card className="flex flex-row justify-around  bg-gray-100 shadow">
+            <Card className="flex flex-col  lg:flex-row justify-around  bg-gray-100 shadow">
                 <div className="space-y-3">
                     <Image
                         src={imageUrl}
                         alt={FacilityName}
                         height={600}
                         width={600}
-
+                        
                     />
 
                     <h1 className="text-5xl font-bold">{FacilityName}</h1>

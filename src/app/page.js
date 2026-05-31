@@ -19,7 +19,7 @@ export default async function Home() {
       <div className="max-w-7xl mx-auto">
         <h1 className="font-hind text-center text-4xl font-extrabold mt-[30px]">Featured Facilities</h1>
 
-        <div className=" grid grid-cols-3 gap-10 mt-[30px]">
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-[30px]">
           {
             data.slice(0, 6).map(d => <FacilityCard key={d._id} data={d}></FacilityCard>)
           }
@@ -29,13 +29,15 @@ export default async function Home() {
 
         <FacilityType></FacilityType>
 
-        <div className="grid grid-cols-2 items-center px-8 py-4 border border-gray-100 shadow-lg mt-[100px] bg-gray-200">
-          <div className=" relative w-[400px] h-[600px] bg-green-500 justify-around">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center px-8 py-4 border border-gray-100 shadow-lg mt-[100px] bg-gray-200 space-y-6">
+          <div >
             <Image
               src="https://i.ibb.co.com/nqyKry2T/83222ec7ad5d81a365b7b5165a3afb32.jpg"
               alt="Football"
-              fill
-              className="object-cover "
+              height={700}
+              width={400}
+              className="mx-auto"
+              
             />
 
           </div>

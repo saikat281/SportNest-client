@@ -46,7 +46,7 @@ const AddFacilityPage = () => {
             <Card className="max-w-7xl mx-auto   flex justify-center items-center rounded-none">
 
                 <Form onSubmit={onSubmit}
-                    className="p-10 space-y-8 shadow-lg rounded-2xl bg-blue-50"
+                    className="p-10 space-y-8 shadow-lg rounded-2xl bg-blue-50 w-full md:w-auto"
                 >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Facility Name */}

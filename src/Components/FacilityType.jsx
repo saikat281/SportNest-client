@@ -3,9 +3,9 @@ import Image from "next/image";
 
 const FacilityType = () => {
     return (
-        <div className="flex justify-between items-center gap-10 mt-[60px]">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5  mt-[60px] space-y-3">
             <div className="space-y-2">
-                <div className="relative w-[100px] h-[100px] ">
+                <div className="relative w-[100px] h-[100px] mx-auto">
                     <Image
                         src="https://i.ibb.co.com/V0PKkbsf/football-ball-svgrepo-com.jpg"
                         alt="Football"
@@ -18,7 +18,7 @@ const FacilityType = () => {
             </div>
 
             <div  className="space-y-2">
-                <div className="relative w-[100px] h-[100px] ">
+                <div className="relative w-[100px] h-[100px] mx-auto">
                     <Image
                         src="https://i.ibb.co.com/yBPbswCZ/cricket-game-svgrepo-com.jpg"
                         alt="Cricket"
@@ -30,7 +30,7 @@ const FacilityType = () => {
                 <p className="text-center font-bold">Cricket</p>
             </div>
            <div  className="space-y-2">
-                <div className="relative w-[100px] h-[100px] ">
+                <div className="relative w-[100px] h-[100px] mx-auto">
                     <Image
                         src="https://i.ibb.co.com/Qv7bMStd/basketball-svgrepo-com.jpg"
                         alt="BasketBall"
@@ -42,7 +42,7 @@ const FacilityType = () => {
                 <p className="text-center font-bold">BasketBall</p>
             </div>
             <div  className="space-y-2">
-                <div className="relative w-[100px] h-[100px] ">
+                <div className="relative w-[100px] h-[100px] mx-auto">
                     <Image
                         src="https://i.ibb.co.com/KjZCMYZn/badminton-svgrepo-com.jpg"
                         alt="Badminton"
@@ -54,7 +54,7 @@ const FacilityType = () => {
                 <p className="text-center font-bold">Badminton</p>
             </div>
             <div  className="space-y-2">
-                <div className="relative w-[100px] h-[100px] ">
+                <div className="relative w-[100px] h-[100px] mx-auto ">
                     <Image
                         src="https://i.ibb.co.com/sr68SMZ/tennis-svgrepo-com.jpg"
                         alt="Badminton"

@@ -6,6 +6,7 @@ import Link from "next/link";
 import UiVerseNavLink from "./UiVerseNavLink";
 import UiVerseLogOut from "./UiVerseLogOut";
 import UiVerseLogIn from "./UiVerseLogIn";
+import { DropDownNav } from "./DropDownNav";
 
 
 const Navbar = () => {
@@ -45,9 +46,9 @@ const Navbar = () => {
 
                     </div>
 
-                    {/* <div className="lg:hidden">
-                        <DropdownNav></DropdownNav>
-                    </div> */}
+                    <div className="lg:hidden">
+                        <DropDownNav></DropDownNav>
+                    </div>
 
                     {user ? <>
                         <Avatar>

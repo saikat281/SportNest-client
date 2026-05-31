@@ -30,14 +30,14 @@ const ManageMyFacilitiesPage = async ({ searchParams }) => {
     // const { imageUrl, FacilityName, price, _id } = data
     return (
         <div className="mt-[60px] max-w-7xl mx-auto">
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-4">
                 <h1 className=" text-4xl font-bold">My Facilities</h1>
                 <div>
                      <SearchFacility></SearchFacility>
                 </div>
             </div>
 
-            <div className=" grid grid-cols-3 gap-10 mt-[60px]">
+            <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-[60px]">
                 {
                     data.map((d, idx) => {
                         return <Card key={idx} className=" bg-green-50  p-6 shadow">

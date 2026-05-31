@@ -20,41 +20,41 @@ const BookingCard = ({ data }) => {
     const user = session?.user
     //  console.log(user);
 
-    
 
-    const handleBooking = async(e) => {
+
+    const handleBooking = async (e) => {
         e.preventDefault();
 
-        
+
 
         const bookingData = {
             userId: user?.id,
             facility_Name: e.target.facility_Name.value,
             booking_date: new Date(depatureDate),
             time_slot: e.target.time_slot.value,
-            slot_hours : e.target.hour.value,
+            slot_hours: e.target.hour.value,
             price: Price
 
         }
-        const {data:tokenData} = await authClient.token()
+        const { data: tokenData } = await authClient.token()
         console.log(tokenData)
 
-        const res = await fetch('http://localhost:5000/booking',{
-            method : 'POST',
-            headers:{
-                'content-type' : 'application/json',
-                authorization : `Bearer ${tokenData?.token}`
+        const res = await fetch('http://localhost:5000/booking', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                authorization: `Bearer ${tokenData?.token}`
             },
-            body : JSON.stringify(bookingData)
+            body: JSON.stringify(bookingData)
         })
 
         const BookedData = await res.json();
         console.log(BookedData);
-        
+
         toast.success('Successfully Booked!')
         // try-catch e rakha jabe
 
-        
+
     }
 
 
@@ -66,7 +66,7 @@ const BookingCard = ({ data }) => {
             <Form onSubmit={handleBooking} className="h-full flex flex-col justify-between">
                 <div className="space-y-6" >
                     <div>
-                        <TextField isRequired className="w-full max-w-64" name="facility_Name" type="text"> 
+                        <TextField isRequired className="w-full max-w-64" name="facility_Name" type="text">
                             <Label>Facility Name</Label>
                             <Input placeholder="eg. Kings Arena" />
                             <Description>This field is required</Description>
@@ -101,6 +101,8 @@ const BookingCard = ({ data }) => {
 
                                 }
                                 type="number"
+                                min={1}
+                                max={24}
                                 placeholder="eg. 1"
 
                             />
@@ -110,7 +112,7 @@ const BookingCard = ({ data }) => {
 
 
                     </div>
-                    
+
                     <Button type="submit" variant="outline" className={'flex justify-between items-center text-2xl font-bold p-2 rounded-md w-full mt-[70px] hover:bg-black hover:text-white'}>
                         <p>Total Price</p>
                         <p>৳ {Price}</p>
